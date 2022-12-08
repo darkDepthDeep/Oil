@@ -1,0 +1,92 @@
+.main {
+    min-height: 727px;
+    &__wrap {
+        display: flex;
+        &:not(:first-child) {
+            display: none;
+        }
+    }
+    &__img {
+        margin-left: 80px;
+    }
+    &__wrapper {
+        margin-left: 50px;
+    }
+    &__title {
+        font-family: 'Amatic', sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 125%;
+        color: $green;
+        margin-top: 98px;
+        &-dark-green {
+            color: $dark-green;
+        }
+        &-red {
+            color: $red;
+        }
+        &-orange {
+            color: $orange;
+        }
+    }
+    &__slider-text {
+        margin-top: 33px;
+        &:not(:first-child) {
+            margin-left: 40px;
+        }
+    }
+    &__subtitle {
+        font-family: 'Amatic', sans-serif;
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 125%;
+        color: $dark-grey;
+        margin-top: 40px;
+        margin-left: 4px;
+    }
+    &__text {
+        font-family: 'Roboto';
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 24px;
+        color: $dark-grey;
+        max-width: 613px;
+        margin-top: 32px;
+    }
+    &__counter {
+        display: flex;
+        margin-top: 32px;
+    }
+    &__minus {
+        cursor: pointer;
+    }
+    &__num {
+        margin-left: 25px;
+        align-self: center;
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 32px;
+        color: $green;
+        &-dark-green {
+            color: $dark-green;
+        }
+        &-red {
+            color: $red;
+        }
+        &-orange {
+            color: $orange;
+        }
+    }
+    &__plus {
+        cursor: pointer;
+        margin-left: 25px;
+    }
+    &__btn-more, &__btn-basket {
+        margin-top: 32px;
+        transition: all 0.3s;
+        &:nth-child(7) {
+            margin-left: 40px;
+        }
+    }
+}

@@ -1,0 +1,81 @@
+.services {
+    position: relative;
+    min-height: 382px;
+    &__wrapper {
+        display: flex;
+        width: 806px;
+        height: 123px;
+        background-color: #EDF4D2;
+        text-align: center;
+        &:first-child {
+            padding-left: 422px;
+        }
+        &-delivery {
+        margin-top: 42px;
+        }
+        &-payment {
+            margin-top: 40px;
+            margin-left: 1097px;
+        }
+    }
+    &__inner {
+        &-delivery {
+            margin-top: 24px;
+            &:not(:first-child) {
+                margin-left: 64px;
+            }
+        }
+        &-payment {
+            align-self: center;
+            margin-left: 24px;
+            &:not(:first-child) {
+                margin-left: 47px;
+            }
+        }
+        &-icon {
+            display: block;
+            margin: 0 auto;
+        }
+        &-car {
+            margin-top: 6px;
+        }
+        &-descr {
+            margin-top: 16px;
+            font-weight: 300;
+            font-size: 16px;
+            color: $dark-grey;
+            text-align: center;
+        }
+        &-mail {
+            width: 93px;
+            margin-top: 20px;
+        }
+    }
+    &__text {
+        font-family: 'Amatic', sans-serif;
+        font-weight: 400;
+        font-size: 40px;
+        color: $dark-grey;
+        &_top {
+            position: absolute;
+            top: 35px;
+            left: 843px;
+        }
+        &_bottom {
+            position: absolute;
+            right: 843px;
+            top: 198px;
+        }
+    }
+    &__icon {
+        position: absolute;
+        &-vine {
+            top: 83px;
+            left: 210px;
+        }
+        &-herbs {
+            top: -12px;
+            right: 210px;
+        }
+    }
+}

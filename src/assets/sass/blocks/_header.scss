@@ -1,0 +1,65 @@
+.header {
+    min-height: 211px;
+    &__wrapper {
+        display: flex;
+        align-items: center;
+    }
+    &__logo {
+        margin-left: -42px;
+    }
+    &__menu ul{
+        display: flex;
+    }
+    &__text {
+        margin-left: 88px;
+        list-style: none;
+        a {
+            text-decoration: none;
+            font-family: 'Messiri', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 28px;
+            text-align: center;
+            color: $green;
+            &:after {
+                display: block;
+                content: "";
+                background-color: $green;
+                height: 1px;
+                width: 0%;
+                margin-left: 50%;
+                margin-top: -5px;
+                transition: width .3s ease-in-out;
+                transform: translateX(-50%);
+            }
+            &:hover:after {
+                width: 100%;
+            }
+        }
+        &:nth-child(1) {
+        margin-left: 210px;
+        }
+    }
+    &__icon {
+        position: relative;
+        margin-left: 220px;
+    }
+    .cart__quantity {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        background: #D73A31;
+        font-weight: 400;
+        font-size: 16px;
+        color: $white;
+        text-align: center;
+        line-height: 24px;
+        border-radius: 100%;
+        transform: translateY(-50%);
+        left: 30px;
+        top: 0;
+    }
+    .cart__icon {
+        cursor: pointer;
+    }
+}

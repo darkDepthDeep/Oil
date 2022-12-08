@@ -1,0 +1,128 @@
+@import "../general/variables";
+
+// Большие кнопки в main ///////////////////////////////////////////////////////////
+.btn-big-menu {
+    display: inline-block;
+    width: 203px;
+    height: 48px;
+    background-color: transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+    line-height: 32px;
+    transition: all .2s
+}
+
+.btn-green {
+    color: $green;
+    border: 1px solid $green;
+}
+
+.btn-green:hover {
+    background: linear-gradient(320.69deg, #536614 15.36%, #97C20B 84.86%);
+    color: $white;
+}
+
+.btn-dark-green {
+    color: $dark-green;
+    border: 1px solid $dark-green;
+}
+
+.btn-dark-green:hover {
+    background: linear-gradient(320.42deg, #076534 15.36%, #00DB69 82.23%);
+    color: $white;
+}
+
+.btn-red {
+    color: $red;
+    border: 1px solid $red;
+}
+
+.btn-red:hover {
+    background: linear-gradient(321.31deg, #99160E 15.37%, #E84239 81.98%);
+    color: $white;
+}
+
+.btn-orange {
+    color: $orange;
+    border: 1px solid $orange;
+}
+
+.btn-orange:hover {
+    background: linear-gradient(324.18deg, #BA6400 14.36%, #FF9D34 85.34%);
+    color: $white;
+}
+
+// Маленькие кнопки в main ///////////////////////////////////////////////////////////
+
+.btn-small-menu {
+    display: inline-block;
+    width: 143px;
+    height: 40px;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 400;
+    text-align: center;
+    font-size: 18px;
+    line-height: 36px;
+    transition: all .2s
+}
+
+.btn-green-light-salad {
+    color: $light-green-salad;
+    border: 1px solid $light-green-salad;
+}
+
+.btn-green-light-salad-active {
+    background: $light-green-salad;
+    color: $dark-green-salad;
+}
+
+.btn-dark-green-italiano {
+    color: $light-green-italiano;
+    border: 1px solid $light-green-italiano;
+}
+
+.btn-dark-green-italiano-active {
+    background: $light-green-italiano;
+    color: $dark-green-italiano;
+}
+
+.btn-light-red {
+    color: $light-red;
+    border: 1px solid $light-red;
+}
+
+.btn-light-red-active {
+    background: $light-red;
+    color: $dark-red;
+}
+
+.btn-light-orange {
+    color: $ligth-orange;
+    border: 1px solid $ligth-orange;
+}
+
+.btn-light-orange-active {
+    background: $ligth-orange;
+    color: $dark-orange;
+}
+
+// Кнопки в oil ///////////////////////////////////////////////////////////
+
+.btn-oil {
+    width: 144px;
+    height: 32px;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 50px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 32px;
+    transition: all .2s
+}

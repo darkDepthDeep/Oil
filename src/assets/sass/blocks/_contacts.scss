@@ -1,0 +1,88 @@
+.contacts { 
+    min-height: 666px;
+    
+    &__title {
+        margin-top: 26px;
+        font-family: 'Amatic', sans-serif;
+        font-weight: 400;
+        font-size: 48px;
+        text-align: center;
+        color: $dark-grey;
+    }
+    &__wrapper {
+        position: relative;
+        .background {
+            position: absolute;
+            top:72px;
+            left: 127px;
+        }
+        .image {
+            position: absolute;
+            top: 40px;
+            left: 253px;
+        }
+        .social {
+            position: absolute;
+            width: 425px;
+            height: 472px;
+            background: $white;
+            box-shadow: 10px 10px 35px rgba(190, 191, 183, 0.1);
+            top: 72px;
+            left: 948px;
+            &__wrapper {
+                display: flex;
+                &_top {
+                    margin-top: 56px;
+                }
+                margin-left: 56px;
+                margin-top: 32px;
+            }
+            &__text {
+                display: block;
+                align-self: center;
+                margin-left: 32px;
+                font-weight: 300;
+                font-size: 16px;
+                text-decoration: none;
+                color: $dark-grey;
+                transition: color .3s ease-in-out;
+                &:hover {
+                    color: $green;
+                }
+                &:after {
+                    display: block;
+                    content: '';
+                    background-color: $green;
+                    height: 1px;
+                    width: 0%;
+                    margin-left: 50%;
+                    margin-top: 0px;
+                    transition: width .3s ease-in-out;
+                    transform: translate(-50%);
+                }
+                &:hover:after {
+                    width: 100%;
+                }
+            }
+            &__btn {
+                width: 222px;
+                height: 40px;
+                border: 1px solid $green;
+                border-radius: 50px;
+                cursor: pointer;
+                margin-top: 32px;
+                margin-left: 102px;
+                background-color: transparent;
+                color: $green;
+                font-weight: 500;
+                font-size: 16px;
+                transition: all .3s;
+                &:hover {
+                    background-color: $green;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,186 @@
+.oil {
+    min-height: 824px;
+    &__title {
+        margin-top: 22px;
+        text-align: center;
+        margin-left: auto;
+        font-family: 'Amatic', sans-serif;
+        font-weight: 400;
+        font-size: 48px;
+    }
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__card {
+        padding: 8px 24px 42px 24px;
+        margin-top: 96px;
+        width: 360px;
+        min-height: 594px;
+        &:nth-child(3) {
+            margin-top: 84px;
+        }
+        &:nth-child(4) {
+            margin-top: 89px;
+        }
+    }
+    &__img {
+        display: block;
+        margin: 0 auto;
+    }
+    &__subtitle {
+        margin-top: 16px;
+        font-family: 'Amatic', sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        &-green {
+            color: $green;
+        }
+        &-dark-green {
+            color: $dark-green;
+        }
+        &-red {
+            color: $red;
+        }
+        &-orange {
+            color: $orange;
+        }
+    }
+    &__text {
+        margin-top: 16px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 125%;
+        color: $dark-grey;
+    }
+    &__compound {
+        margin-top: 8px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 125%;
+        color: $dark-grey;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__counter {
+        display: flex;
+        margin-top: 38px;
+    }
+    &__minus {
+        cursor: pointer;
+    }
+    &__amount {
+        margin-left: 16px;
+        font-weight: 500;
+        font-size: 16px;
+        margin-top: 3px;
+        &-green {
+            color: $green;
+        }
+        &-dark-green {
+            color: $dark-green;
+        }
+        &-red {
+            color: $red;
+        }
+        &-orange {
+            color: $orange;
+        }
+    }
+    &__plus {
+        margin-left: 16px;
+        cursor: pointer;
+    }
+    &__inner {
+        display: flex;
+        margin-top: 32px;
+        
+    }
+    &__volume {
+        font-weight: 300;
+        font-size: 14px;
+        color: $dark-grey;
+        margin-right: 16px;
+        align-self: center;
+    }
+    &__price {
+        font-weight: 500;
+        font-size: 24px;
+        span {
+            font-weight: 300;
+            font-size: 18px;
+        }
+        &-green {
+            color: $green;
+        }
+        &-dark-green {
+            color: $dark-green;
+        }
+        &-red {
+            color: $red;
+        }
+        &-orange {
+            color: $orange;
+        }
+    }
+    &__btn {
+        margin-top: 24px;
+        &-orange {
+            a {
+                display: block;
+                width: 144px;
+                height: 32px;
+                text-decoration: none;
+                color: $orange;
+                &:hover {
+                    color: $white;
+                    transition: all .3s;
+                }
+            }
+        }
+        &-green {
+            a {
+                display: block;
+                width: 144px;
+                height: 32px;
+                text-decoration: none;
+                color: $green;
+                &:hover {
+                    color: $white;
+                    transition: all .3s;
+                }
+            }
+        }
+        &-dark-green {
+            a {
+                display: block;
+                width: 144px;
+                height: 32px;
+                text-decoration: none;
+                color: $dark-green;
+                &:hover {
+                    color: $white;
+                    transition: all .3s;
+                }
+            }
+        }
+        &-red {
+            a {
+                display: block;
+                width: 144px;
+                height: 32px;
+                text-decoration: none;
+                color: $red;
+                &:hover {
+                    color: $white;
+                    transition: all .3s;
+                }
+            }
+        }
+        &:nth-child(7) {
+            margin-left: 20px;
+        }
+    }
+}

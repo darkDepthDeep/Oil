@@ -1,0 +1,93 @@
+.about {
+    min-height: 1004px;
+    &__title {
+        font-family: 'Amatic', sans-serif;
+        font-size: 48px;
+        font-weight: 400;
+        text-align: center;
+        margin-top: 43px;
+        color: $dark-grey;
+    }
+    &__header {
+        position: relative;
+        height: 406px;
+        margin-top: 39px;
+        &-background {
+            position: absolute;
+            top: 49px;
+            left: 0;
+        }
+        &-image {
+            position: absolute;
+            left: 85px;
+        }
+        &-inner {
+            position: absolute;
+            width: 922px;
+            height: 357px;
+            background: $white;
+            box-shadow: 10px 10px 35px rgba(190, 191, 183, 0.1);
+            top: 49px;
+            left: 578px;
+        }
+        &-subtitle {
+            font-family: 'Amatic', sans-serif;
+            font-weight: 400;
+            font-size: 32px;
+            color: $dark-grey;
+            margin-top: 48px;
+            margin-left: 48px;
+        }
+        &-text {
+            width: 826px;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+            color: $dark-grey;
+            margin-top: 23px;
+            margin-left: 48px;
+        }
+    }
+    &__footer {
+        position: relative;
+        height: 381px;
+        margin-top: 32px;
+        &-inner {
+            position: absolute;
+            width: 922px;
+            height: 333px;
+            top: 48px;
+            z-index: 20;
+            background: $white;
+            box-shadow: 10px 10px 35px rgba(190, 191, 183, 0.1);
+        }
+        &-subtitle {
+            font-family: 'Amatic', sans-serif;
+            font-weight: 400;
+            font-size: 32px;
+            color: $dark-grey;
+            margin-left: 48px;
+            margin-top: 48px;
+        }
+        &-text {
+            width: 826px;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+            color: $dark-grey;
+            margin-left: 48px;
+            margin-top: 25px;
+
+        }
+        &-image {
+            position: absolute;
+            left: 887px;
+            z-index: 10;
+        }
+        &-background {
+            position: absolute;
+            left: 1305px;
+            top: 48px;
+        }
+    }
+}
