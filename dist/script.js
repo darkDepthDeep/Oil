@@ -98,6 +98,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_cart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/cart */ "./src/js/modules/cart.js");
 /* harmony import */ var _modules_counter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/counter */ "./src/js/modules/counter.js");
 /* harmony import */ var _modules_toggleCartStatus__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/toggleCartStatus */ "./src/js/modules/toggleCartStatus.js");
+/* harmony import */ var _modules_showHideForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/showHideForm */ "./src/js/modules/showHideForm.js");
+
 
 
 
@@ -107,6 +109,7 @@ window.addEventListener("DOMContentLoaded", () => {
   Object(_modules_cart__WEBPACK_IMPORTED_MODULE_0__["default"])();
   Object(_modules_counter__WEBPACK_IMPORTED_MODULE_1__["default"])();
   Object(_modules_toggleCartStatus__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  Object(_modules_showHideForm__WEBPACK_IMPORTED_MODULE_3__["default"])();
 });
 
 /***/ }),
@@ -130,6 +133,7 @@ const cart = () => {
   const formResetBtn = basketCart.querySelector('.form__footer-btn');
   const basketPrice = document.querySelector('.basket__price');
   const quantityItem = document.querySelector('.basket__num');
+  const scroll = calcScroll();
 
   // Добавление товара в корзину //////////////////////////////////////////////////////////////////////////////////////
 
@@ -257,6 +261,7 @@ const cart = () => {
     basketIcon.addEventListener('click', () => {
       basketCart.style.display = 'block';
       document.body.style.overflow = 'hidden';
+      document.body.style.marginRight = `${scroll}px`;
       basketCart.scrollTo(0, 0);
     });
   };
@@ -274,6 +279,7 @@ const cart = () => {
       basketInput.forEach(input => {
         input.checked = false;
       });
+      document.body.style.marginRight = '0px';
     });
   };
 
@@ -290,10 +296,11 @@ const cart = () => {
       basketInput.forEach(input => {
         input.checked = false;
       });
+      document.body.style.marginRight = '0px';
     }
   });
 
-  // Сброс данных в корзине 
+  // Сброс данных в корзине при клике на кнопку сбросить
 
   const clearForm = () => {
     formResetBtn.addEventListener('click', e => {
@@ -307,6 +314,23 @@ const cart = () => {
       e.preventDefault();
     });
   };
+
+  // Функция по динмическому раасчету ширины скрола в зависимости от брузера
+  function calcScroll() {
+    let div = document.createElement('div');
+
+    // Чтобы этот блок у нас существовал на странице нам необходимо задать ему определенные параметры
+    div.style.width = '50px';
+    div.style.height = '50px';
+    div.style.overflowY = 'scroll';
+    div.style.visibility = 'hidden';
+    document.body.appendChild(div); // помещаем наш вновь созданный блок в body
+
+    let scrollWidth = div.offsetWidth - div.clientWidth; // div.offsetWidth это полная ширина вместе с бордерами, div.clientWidth - это включает в себя только паддинги и самый главный контент который есть внутри (и главное что сюда не включается прокрутка)
+    div.remove(); // после того как мы узнали ширину нашей прокрутки мы можем удалить этот блок, он нам уже не нужен
+    return scrollWidth; // мы будем возвращать полученное значение scrollWidth
+  }
+
   clearForm();
   showBasket();
   closeBasket();
@@ -420,6 +444,75 @@ const counter = () => {
 
 /***/ }),
 
+/***/ "./src/js/modules/showHideForm.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/showHideForm.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const showHideForm = () => {
+  const socialBtn = document.querySelector('.social__btn');
+  const form = document.querySelector('.contacts-form');
+  const closeBtn = document.querySelector('.form-header__icon');
+  const formInput = form.querySelectorAll('input');
+  const formTextarea = form.querySelector('.contacts-form__textarea');
+  const scroll = calcScroll();
+
+  // Показ формы
+  socialBtn.addEventListener('click', () => {
+    form.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    document.body.style.marginRight = `17px`;
+  });
+
+  // Скрытие формы
+  closeBtn.addEventListener('click', () => {
+    form.style.display = 'none';
+    document.body.style.overflow = '';
+    formInput.forEach(input => {
+      input.value = '';
+    });
+    formTextarea.value = '';
+    document.body.style.marginRight = '0px';
+  });
+
+  // Скрытие формы кликом на подложку
+  window.addEventListener('click', e => {
+    if (e.target === form) {
+      form.style.display = 'none';
+      document.body.style.overflow = '';
+      formInput.forEach(input => {
+        input.value = '';
+      });
+      formTextarea.value = '';
+      document.body.style.marginRight = '0px';
+    }
+  });
+
+  // Функция по динмическому раасчету ширины скрола в зависимости от брузера
+  function calcScroll() {
+    let div = document.createElement('div');
+
+    // Чтобы этот блок у нас существовал на странице нам необходимо задать ему определенные параметры
+    div.style.width = '50px';
+    div.style.height = '50px';
+    div.style.overflowY = 'scroll';
+    div.style.visibility = 'hidden';
+    document.body.appendChild(div); // помещаем наш вновь созданный блок в body
+
+    let scrollWidth = div.offsetWidth - div.clientWidth; // div.offsetWidth это полная ширина вместе с бордерами, div.clientWidth - это включает в себя только паддинги и самый главный контент который есть внутри (и главное что сюда не включается прокрутка)
+    div.remove(); // после того как мы узнали ширину нашей прокрутки мы можем удалить этот блок, он нам уже не нужен
+    return scrollWidth; // мы будем возвращать полученное значение scrollWidth
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (showHideForm);
+
+/***/ }),
+
 /***/ "./src/js/modules/toggleCartStatus.js":
 /*!********************************************!*\
   !*** ./src/js/modules/toggleCartStatus.js ***!
@@ -431,9 +524,15 @@ const counter = () => {
 __webpack_require__.r(__webpack_exports__);
 const toggleCartStatus = () => {
   const cartWrapper = document.querySelector('.basket__wrap');
-  console.log(cartWrapper.children);
   const cartWrap = document.querySelector('.basket__item');
   const orderForm = document.querySelector('.form-fields');
+  const btn = document.querySelectorAll('.main__slider-text');
+  console.log(btn);
+  btn.forEach(button => {
+    button.addEventListener('click', () => {
+      console.log('Hello');
+    });
+  });
 
   // orderForm.style.display = 'none';
 

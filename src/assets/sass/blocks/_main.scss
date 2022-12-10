@@ -82,11 +82,8 @@
         cursor: pointer;
         margin-left: 25px;
     }
-    &__btn-more, &__btn-basket {
+    &__btn-basket {
         margin-top: 32px;
         transition: all 0.3s;
-        &:nth-child(7) {
-            margin-left: 40px;
-        }
     }
 }

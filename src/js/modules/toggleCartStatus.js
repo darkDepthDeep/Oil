@@ -1,11 +1,19 @@
 const toggleCartStatus = () => {
 
-    const cartWrapper = document.querySelector('.basket__wrap')
-    console.log(cartWrapper.children);
+    const cartWrapper = document.querySelector('.basket__wrap');
+
     const cartWrap = document.querySelector('.basket__item');
     
     const orderForm = document.querySelector('.form-fields');
-    
+
+
+    const btn = document.querySelectorAll('.main__slider-text');
+    console.log(btn);
+    btn.forEach(button => {
+        button.addEventListener('click', () => {
+            console.log('Hello');
+        });
+    });
 
     // orderForm.style.display = 'none';
 
@@ -19,5 +27,7 @@ const toggleCartStatus = () => {
 
     }
 };
+
+
 
 export default toggleCartStatus;

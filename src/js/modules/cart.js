@@ -8,6 +8,7 @@ const cart = () => {
     const formResetBtn = basketCart.querySelector('.form__footer-btn');
     const basketPrice = document.querySelector('.basket__price');
     const quantityItem = document.querySelector('.basket__num');
+    const scroll = calcScroll();
 
 // Добавление товара в корзину //////////////////////////////////////////////////////////////////////////////////////
 
@@ -155,6 +156,7 @@ window.addEventListener('click', (e) => {
         basketIcon.addEventListener('click', () => {
             basketCart.style.display = 'block';
             document.body.style.overflow = 'hidden';
+            document.body.style.marginRight = `${scroll}px`;
             basketCart.scrollTo(0, 0);
         });
     };
@@ -172,6 +174,7 @@ window.addEventListener('click', (e) => {
             basketInput.forEach(input => {
                 input.checked = false;
             });
+            document.body.style.marginRight = '0px';
         });
     };
 
@@ -188,10 +191,11 @@ window.addEventListener('click', (e) => {
             basketInput.forEach(input => {
                 input.checked = false;
             });
+            document.body.style.marginRight = '0px';
         }
     });
 
-    // Сброс данных в корзине 
+    // Сброс данных в корзине при клике на кнопку сбросить
 
     const clearForm = () => {
         formResetBtn.addEventListener('click', (e) => {
@@ -206,6 +210,23 @@ window.addEventListener('click', (e) => {
             e.preventDefault();
         });
     };
+
+    // Функция по динмическому раасчету ширины скрола в зависимости от брузера
+    function calcScroll() {
+        let div = document.createElement('div');
+    
+        // Чтобы этот блок у нас существовал на странице нам необходимо задать ему определенные параметры
+        div.style.width = '50px';
+        div.style.height = '50px';
+        div.style.overflowY = 'scroll';
+        div.style.visibility = 'hidden';
+    
+        document.body.appendChild(div);     // помещаем наш вновь созданный блок в body
+    
+        let scrollWidth = div.offsetWidth - div.clientWidth;           // div.offsetWidth это полная ширина вместе с бордерами, div.clientWidth - это включает в себя только паддинги и самый главный контент который есть внутри (и главное что сюда не включается прокрутка)
+        div.remove();           // после того как мы узнали ширину нашей прокрутки мы можем удалить этот блок, он нам уже не нужен
+        return scrollWidth;     // мы будем возвращать полученное значение scrollWidth
+    }
 
     clearForm();
     showBasket();
